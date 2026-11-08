@@ -39,4 +39,14 @@ public class BakuganService {
         return newBakugan;
     }
 
+    public List<BakuganStats> getRoster() {
+        return roster;
+    }
+
+    public BakuganStats findByName(String nameSearch){
+        return roster.stream()
+                .filter(b -> b.name().equalsIgnoreCase(nameSearch))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Bakugan not found with name: " + nameSearch))
+    }
 }

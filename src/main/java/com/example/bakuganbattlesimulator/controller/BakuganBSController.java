@@ -18,7 +18,7 @@ public class BakuganBSController {
         return bakuService.demo();
     }
 
-    @PostMapping("/awake")
+    @PostMapping("api/bakugan/awake")
     public BakuganStats forgeRandom(){
         return bakuService.createRandomBakugan();
     }
