@@ -30,11 +30,12 @@ public class BakuganService {
                 .system("You are a Bakugan monster designer. Generate a completely random," +
                         "balanced Bakugan creature with G-Power between 300 and 1000," +
                         "including attributes, species, and ability cards.")
-                .user("Generate a random Bakugan.")
+                .user("Awake a random Bakugan.")
                 .call()
-                .entity(BakuganStats.class);
+                .entity(BakuganStats.class, spec-> spec.useProviderStructuredOutput());
 
         roster.add(newBakugan);
+
         return newBakugan;
     }
 
