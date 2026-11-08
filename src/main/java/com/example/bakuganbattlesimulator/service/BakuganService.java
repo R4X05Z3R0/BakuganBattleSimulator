@@ -1,7 +1,9 @@
 package com.example.bakuganbattlesimulator.service;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BakuganService {
     private final ChatClient chatClient;
 
@@ -11,9 +13,9 @@ public class BakuganService {
 
     public String demo(){
         return chatClient.prompt()
-                .system("Generate a Bakugan with name, attributes, G-Power and specie," +
+                .system("You are a Bakugan monster designer. Generate a Bakugan with name, attributes, G-Power and specie," +
                         "as well as ability cards for the generated Bakugan")
-                .user("")
+                .user("Forge a random Bakugan")
                 .call()
                 .content();
     }
