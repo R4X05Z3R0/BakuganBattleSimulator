@@ -47,6 +47,6 @@ public class BakuganService {
         return roster.stream()
                 .filter(b -> b.name().equalsIgnoreCase(nameSearch))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Bakugan not found with name: " + nameSearch))
+                .orElseThrow(() -> new RuntimeException("Bakugan not found with name: " + nameSearch));
     }
 }
