@@ -31,6 +31,7 @@ public class BattleService {
                 - `battleLog` MUST contain 8 to 10 dramatic, turn-by-turn action steps shouting ability cards in ALL CAPS.
                 - `finalGpowerA` and `finalGpowerB` must reflect the final tally after ability boosts and field weather effects.
                 - `winner` must state the exact name of the winning Bakugan.
+                - `attributeA` and `attributeB` must state respective attributes. 
                 - `decisiveFieldFactor` should explain how the live weather data impacted the brawl.
                 """)
                 .user("BRAWL SETUP"+

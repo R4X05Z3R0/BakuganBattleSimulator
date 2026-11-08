@@ -5,6 +5,8 @@ import java.util.List;
 public record BakuganBattle(
         String bakuganA,
         String bakuganB,
+        String attributeA,
+        String attributeB,
         int initGPowerA,
         int initGPowerB,
         List<String> battleLog,
