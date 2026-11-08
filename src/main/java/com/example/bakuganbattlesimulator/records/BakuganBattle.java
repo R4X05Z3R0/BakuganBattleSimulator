@@ -2,7 +2,7 @@ package com.example.bakuganbattlesimulator.records;
 
 import java.util.List;
 
-public record BakuganBattle (
+public record BakuganBattle(
         String bakuganA,
         String bakuganB,
         int initGPowerA,
