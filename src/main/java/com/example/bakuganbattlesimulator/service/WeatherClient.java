@@ -1,6 +1,7 @@
 package com.example.bakuganbattlesimulator.service;
 
-import com.example.bakuganbattlesimulator.records.CurrentData;
+import com.example.bakuganbattlesimulator.dto.WeatherDto;
+import com.example.bakuganbattlesimulator.records.WeatherApiResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -14,17 +15,15 @@ public class WeatherClient {
                 .build();
     }
 
-
-    public CurrentData fetchWeather(String location){
+    public WeatherApiResponse fetch(String location){
         return client.get()
-                .uri(uriBuilder -> uriBuilder.
-                        path("/api.php")
+                .uri( uri-> uri.path("/api.php")
                         .queryParam("location", location)
                         .queryParam("degree", "C")
                         .build())
                 .retrieve()
-                .body(CurrentData.class);
-    }
+                .body(WeatherApiResponse.class);
+        }
 
     public String fetchWeatherRaw(String location){
         return client.get()
