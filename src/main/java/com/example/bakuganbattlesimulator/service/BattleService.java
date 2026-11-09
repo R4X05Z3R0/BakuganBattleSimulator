@@ -32,7 +32,7 @@ public class BattleService {
                 - `finalGpowerA` and `finalGpowerB` must reflect the final tally after ability boosts and field weather effects.
                 - `winner` must state the exact name of the winning Bakugan.
                 - `attributeA` and `attributeB` must state respective attributes. 
-                - `decisiveFieldFactor` should explain how the live weather data impacted the brawl.
+                - `decisiveFieldFactor` should explain the decisive blow that ended the match and led to victory.
                 """)
                 .user("BRAWL SETUP"+
                         "Bakugan A: " + fighterA +
