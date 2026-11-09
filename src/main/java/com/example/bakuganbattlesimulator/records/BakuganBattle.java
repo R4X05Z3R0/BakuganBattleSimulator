@@ -9,6 +9,7 @@ public record BakuganBattle(
         String attributeB,
         int initGPowerA,
         int initGPowerB,
+        String intro,
         List<String> battleLog,
         String winner,
         int finalGpowerA,

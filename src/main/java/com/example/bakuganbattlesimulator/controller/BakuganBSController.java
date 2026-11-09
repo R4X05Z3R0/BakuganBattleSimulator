@@ -1,10 +1,12 @@
 package com.example.bakuganbattlesimulator.controller;
 
+import com.example.bakuganbattlesimulator.dto.WeatherDto;
 import com.example.bakuganbattlesimulator.records.BakuganBattle;
 import com.example.bakuganbattlesimulator.records.BakuganStats;
 import com.example.bakuganbattlesimulator.records.BrawlInfo;
 import com.example.bakuganbattlesimulator.service.BakuganService;
 import com.example.bakuganbattlesimulator.service.BattleService;
+import com.example.bakuganbattlesimulator.service.WeatherService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +16,14 @@ import java.util.List;
 public class BakuganBSController {
     private final BakuganService bakuService;
     private final BattleService battleService;
+    private final WeatherService weatherService;
 
-    public BakuganBSController(BakuganService bakuService, BattleService battleService){
+    public BakuganBSController(BakuganService bakuService,
+                               BattleService battleService,
+                               WeatherService weatherService){
         this.battleService = battleService;
         this.bakuService = bakuService;
+        this.weatherService = weatherService;
     }
 
     @PostMapping("/demo")
@@ -37,6 +43,11 @@ public class BakuganBSController {
 
     @PostMapping("/brawl")
     public BakuganBattle simulateBrawl(@RequestBody BrawlInfo request){
-        return battleService.simulateBattleByName(request.bakuganA(), request.bakuganB());
+        return battleService.simulateBattleByName(request.bakuganA(), request.bakuganB(), request.location());
+    }
+
+    @GetMapping("/test")
+    public WeatherDto testWeather(@RequestParam String location){
+        return weatherService.getWeather(location);
     }
 }
