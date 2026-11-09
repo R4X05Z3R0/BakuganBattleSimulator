@@ -2,6 +2,7 @@ package com.example.bakuganbattlesimulator.records;
 
 public record BrawlInfo(
         String bakuganA,
-        String bakuganB
+        String bakuganB,
+        String location
 ) {
 }

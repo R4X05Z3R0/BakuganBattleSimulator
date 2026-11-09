@@ -6,7 +6,6 @@ import com.example.bakuganbattlesimulator.records.BakuganStats;
 import com.example.bakuganbattlesimulator.records.BrawlInfo;
 import com.example.bakuganbattlesimulator.service.BakuganService;
 import com.example.bakuganbattlesimulator.service.BattleService;
-import com.example.bakuganbattlesimulator.service.WeatherClient;
 import com.example.bakuganbattlesimulator.service.WeatherService;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,7 +43,7 @@ public class BakuganBSController {
 
     @PostMapping("/brawl")
     public BakuganBattle simulateBrawl(@RequestBody BrawlInfo request){
-        return battleService.simulateBattleByName(request.bakuganA(), request.bakuganB());
+        return battleService.simulateBattleByName(request.bakuganA(), request.bakuganB(), request.location());
     }
 
     @GetMapping("/test")
